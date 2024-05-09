@@ -1,6 +1,7 @@
 package com.target.targetcasestudy.api
 
 import com.target.targetcasestudy.common.Constants
+import com.target.targetcasestudy.data.remote.Deal
 import com.target.targetcasestudy.data.remote.DealResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
