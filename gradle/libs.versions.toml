@@ -4,6 +4,7 @@ androidXAppCompat              = "1.6.1"
 androidXTest                   = "1.5.2"
 composeBom                     = "2024.04.00"
 composeCompiler                = "1.5.11"
+converterGsonVersion = "2.9.0"
 espresso                       = "3.5.1"
 hilt                           = "2.51"
 junit                          = '4.13.2'
@@ -17,6 +18,7 @@ gson                           = "2.10.1"
 
 
 [libraries]
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGsonVersion" }
 gradlePlugin-android     = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePluginVersion"}
 gradlePlugin-hilt        = {module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt"}
 gradlePlugin-kotlin      = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin"}

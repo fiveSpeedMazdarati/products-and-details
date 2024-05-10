@@ -47,9 +47,11 @@ dependencies {
   implementation platform(libs.composeBom)
   implementation libs.composeRuntime
 
+  //Retrofit2
   implementation libs.retrofit
   implementation libs.retrofitRx2Adapter
   implementation libs.okHttp
+  implementation libs.converter.gson
 
   // JSON Parsing
   implementation libs.gson

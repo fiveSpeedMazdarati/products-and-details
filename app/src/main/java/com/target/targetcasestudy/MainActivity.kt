@@ -2,7 +2,7 @@ package com.target.targetcasestudy
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.target.targetcasestudy.presentation.DealListFragment
+import com.target.targetcasestudy.presentation.ui.DealListFragment
 
 class MainActivity : AppCompatActivity() {
 
