@@ -18,7 +18,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideProductService(): DealService {
+    fun provideDealService(): DealService {
         return Retrofit.Builder()
             .baseUrl(Constants.DEALS_API_ENDPOINT)
             .addConverterFactory(GsonConverterFactory.create())

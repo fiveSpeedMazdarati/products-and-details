@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.target.targetcasestudy.R
+import com.target.targetcasestudy.api.DealService
+import javax.inject.Inject
 
-class DealListFragment : Fragment() {
+class DealListFragment @Inject constructor(service: DealService) : Fragment() {
 
   override fun onCreateView(
       inflater: LayoutInflater, container: ViewGroup?,
@@ -20,6 +22,8 @@ class DealListFragment : Fragment() {
     view.findViewById<RecyclerView>(R.id.recycler_view).layoutManager =
         LinearLayoutManager(requireContext())
     view.findViewById<RecyclerView>(R.id.recycler_view).adapter = DealItemAdapter()
+
+
 
     return view
   }

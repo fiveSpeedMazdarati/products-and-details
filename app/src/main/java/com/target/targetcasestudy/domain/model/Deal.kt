@@ -1,6 +1,6 @@
 package com.target.targetcasestudy.domain.model
 
-data class Product(
+data class Deal(
     val id: Int,
     val title: String,
     val aisle: String,

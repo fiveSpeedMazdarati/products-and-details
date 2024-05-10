@@ -11,8 +11,8 @@ import retrofit2.http.Path
 interface DealService {
 
   @GET("${Constants.DEALS_API_ENDPOINT}deals")
-  suspend fun retrieveDeals(): Resource<DealsDto>
+  suspend fun retrieveDeals(): DealsDto
 
   @GET("${Constants.DEALS_API_ENDPOINT}deals/{dealId}")
-  suspend fun retrieveDeal(@Path("dealId") dealId: String): Resource<DealDto>
+  suspend fun retrieveDeal(@Path("dealId") dealId: String): DealDto
 }

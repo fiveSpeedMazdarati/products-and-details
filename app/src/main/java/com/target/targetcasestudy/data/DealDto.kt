@@ -1,7 +1,7 @@
 package com.target.targetcasestudy.data
 
 import com.google.gson.annotations.SerializedName
-import com.target.targetcasestudy.domain.model.Product
+import com.target.targetcasestudy.domain.model.Deal
 
 /**
  * A class representing an individual deal that is returned from the deals API
@@ -28,8 +28,8 @@ data class DealDto(
 *   This mapping also has the effect of translating the nomenclature from "deal" as the API is called,
 *   to "product" which is the information that is actually returned and used in the app.
  */
-fun DealDto.toProduct() : Product {
-    return Product(
+fun DealDto.toProduct() : Deal {
+    return Deal(
         aisle = aisle,
         availability = availability,
         fulfillment = fulfillment,
