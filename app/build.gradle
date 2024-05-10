@@ -20,7 +20,7 @@ android {
   }
 
   buildFeatures {
-    compose true
+    compose=true
   }
   composeOptions {
     kotlinCompilerExtensionVersion libs.versions.composeCompiler.get()
@@ -38,14 +38,28 @@ android {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation libs.kotlin
-
+  implementation libs.core.ktx
   implementation libs.androidXAppCompat
   implementation libs.androidXConstraintLayout
   implementation libs.androidXRecyclerView
 
+
   //Compose
-  implementation platform(libs.composeBom)
+  def composeBom = libs.androidx.compose.bom.v20221000
+  implementation composeBom
+  androidTestImplementation composeBom
+  implementation libs.androidx.compose.material3.material3
+  implementation(libs.androidx.lifecycle.viewmodel.compose)
+  implementation(libs.androidx.runtime.livedata)
+  implementation(libs.androidx.activity.compose)
   implementation libs.composeRuntime
+  implementation libs.compose
+
+  //Android Studio Preview Support
+  implementation(libs.androidx.ui.tooling.preview)
+  //debugImplementation(libs.androidx.ui.tooling)
+  //debugImplementation(libs.ui.test.manifest)
+
 
   //Retrofit2
   implementation libs.retrofit
@@ -55,14 +69,13 @@ dependencies {
 
   // JSON Parsing
   implementation libs.gson
-
   implementation libs.moshi
   ksp libs.moshiKotlinCodeGen
-
   implementation libs.jackson
 
   // Image Loading
   implementation libs.glide
+  implementation libs.compose
 
   implementation libs.hiltAndroid
   ksp libs.hiltCompiler
@@ -73,4 +86,5 @@ dependencies {
   androidTestImplementation libs.androidXTestCore
   androidTestImplementation libs.androidXTestExtJunit
   androidTestImplementation libs.espressoCore
+  androidTestImplementation(libs.ui.test.junit4)
 }
