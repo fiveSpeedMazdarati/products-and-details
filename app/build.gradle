@@ -43,9 +43,10 @@ dependencies {
   implementation libs.androidXAppCompat
   implementation libs.androidXConstraintLayout
   implementation libs.androidXRecyclerView
+    implementation libs.androidx.navigation.runtime.ktx
 
 
-  //Compose
+    //Compose
   def composeBom = libs.androidx.compose.bom.v20221000
   implementation composeBom
   androidTestImplementation composeBom

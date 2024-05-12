@@ -26,17 +26,20 @@ class DealsListViewModel @Inject constructor(private val getDealsUseCase: GetDea
         getDealsUseCase().onEach {
             when(it) {
                 is Resource.Success -> {
-                    Log.i("NEW_DATA", it.data?.products.toString())
-                    _state.value = DealListState(false, it.data?.products ?: emptyList(), error = "")
+                    _state.value = DealListState(
+                        isLoading = false,
+                        deals = it.data?.products ?: emptyList(),
+                        error = "")
 
                 }
                 is Resource.Loading -> {
-                    Log.i("LOADING", "LOADING SPINNER SHOWING")
                     _state.value = DealListState(isLoading = true)
                 }
                 is Resource.Error -> {
-                    Log.e("ERROR", it.message.toString())
-                    _state.value = DealListState(isLoading = false, deals = it.data?.products ?: emptyList(), error = "There was a problem retrieving the deals." )
+                    _state.value = DealListState(
+                        isLoading = false,
+                        deals = it.data?.products ?: emptyList(),
+                        error = "There was a problem retrieving the deals." )
 
                 }
             }

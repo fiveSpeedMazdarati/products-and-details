@@ -6,29 +6,34 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.target.targetcasestudy.presentation.Screen
 import com.target.targetcasestudy.presentation.ui.components.DealListItem
 import com.target.targetcasestudy.presentation.viewmodel.DealsListViewModel
 
 @Composable
-fun DealsListScreen(viewModel: DealsListViewModel) {
+fun DealsListScreen(navController: NavController, viewModel: DealsListViewModel) {
 
     val state = viewModel.state.value
     Log.i("RETRIEVED DEALS", state.deals.toString())
 
     Column {
 
-        Text(text = "List", modifier = Modifier.padding(12.dp), fontSize = 18.sp, fontWeight = FontWeight.W700)
+        Text(text = "List",
+            modifier = Modifier.padding(12.dp),
+            fontSize = 18.sp,
+            fontWeight = FontWeight.W700)
 
         Box(modifier = Modifier.fillMaxSize()) {
 
@@ -36,7 +41,7 @@ fun DealsListScreen(viewModel: DealsListViewModel) {
                 Toast.makeText(LocalContext.current, state.error, Toast.LENGTH_LONG).show()
             }
             if (state.isLoading) {
-                CircularProgressIndicator()
+                CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }
 
             if (state.deals.isEmpty()) {
@@ -48,7 +53,10 @@ fun DealsListScreen(viewModel: DealsListViewModel) {
                     modifier = Modifier.fillMaxSize()
                 ) {
                     items(state.deals) { dealItem ->
-                        DealListItem(deal = dealItem) {
+                        DealListItem(deal = dealItem,
+                            onItemClick = {
+                                navController.navigate(Screen.DealDetailScreen.route + "/${dealItem.id}")
+                            })
 
                         }
                     }
@@ -57,4 +65,3 @@ fun DealsListScreen(viewModel: DealsListViewModel) {
         }
     }
 
-}

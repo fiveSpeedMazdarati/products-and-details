@@ -10,6 +10,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavController
 import com.target.targetcasestudy.presentation.ui.components.DealListItem
 import com.target.targetcasestudy.presentation.view.DealsListScreen
 import com.target.targetcasestudy.presentation.viewmodel.DealsListViewModel
@@ -24,7 +26,11 @@ class MainActivity() : ComponentActivity() {
                 Surface (
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    DealsListScreen(viewModel = viewModel)
+                    DealsListScreen(viewModel = viewModel,
+                        navController = NavController(
+                            context = LocalContext.current
+                        )
+                    )
                 }
             }
         }

@@ -22,6 +22,7 @@ okHttp                         = "4.12.0"
 glide                          = "4.16.0"
 gson                           = "2.10.1"
 uiToolingPreviewAndroidVersion = "1.6.7"
+navigationRuntimeKtxVersion = "2.7.7"
 
 
 [libraries]
@@ -69,6 +70,7 @@ espressoCore             = {module="androidx.test.espresso:espresso-core", versi
 ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 ui-tooling-preview-android = { group = "androidx.compose.ui", name = "ui-tooling-preview-android", version.ref = "uiToolingPreviewAndroidVersion" }
+androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtxVersion" }
 
 [plugins]
 kspPlugin                   = { id = "com.google.devtools.ksp", version.ref = "ksp" }

@@ -1,5 +1,4 @@
 <resources>
   <string name="app_name">Target Case Study</string>
-
-
+  <string name="back_arrow">Back Arrow</string>
 </resources>

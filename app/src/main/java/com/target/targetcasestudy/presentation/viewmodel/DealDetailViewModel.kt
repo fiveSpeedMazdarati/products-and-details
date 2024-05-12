@@ -32,9 +32,23 @@ class DealDetailViewModel @Inject constructor(
     private fun getDealDetails(dealId: String) {
         getDealDetailUseCase(dealId).onEach {
             when (it) {
-                is Resource.Loading -> _state.value = DealDetailState(null, true, "")
-                is Resource.Success -> _state.value = DealDetailState(deal = it.data, isLoading = false, errorMessage = "")
-                is Resource.Error -> _state.value = DealDetailState(deal = null, isLoading = false, it.message ?: "Could not get deal details")
+                is Resource.Loading -> _state.value =
+                    DealDetailState(
+                        deal = null,
+                        isLoading = true,
+                        errorMessage = ""
+                    )
+                is Resource.Success -> _state.value =
+                    DealDetailState(
+                        deal = it.data,
+                        isLoading = false,
+                        errorMessage = ""
+                    )
+                is Resource.Error -> _state.value =
+                    DealDetailState(
+                        deal = null,
+                        isLoading = false,
+                        errorMessage = it.message ?: "Could not get deal details")
             }
         }.launchIn(viewModelScope)
     }
