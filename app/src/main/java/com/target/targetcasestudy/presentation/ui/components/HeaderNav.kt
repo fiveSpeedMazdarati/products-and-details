@@ -26,14 +26,16 @@ fun HeaderNav(showBackArrow: Boolean, title: String, onClick: () -> Unit ) {
         .fillMaxWidth()
         .height(56.dp)
         .padding(8.dp)) {
-        Image(
-            painter = painterResource(id = R.drawable.back),
-            modifier = Modifier
-                .size(32.dp)
-                .padding(6.dp)
-                .align(Alignment.CenterVertically),
-            contentDescription = stringResource(R.string.back_arrow)
-        )
+        if (showBackArrow) {
+            Image(
+                painter = painterResource(id = R.drawable.back),
+                modifier = Modifier
+                    .size(32.dp)
+                    .padding(6.dp)
+                    .align(Alignment.CenterVertically),
+                contentDescription = stringResource(R.string.back_arrow)
+            )
+    }
         Text(
             text = title,
             Modifier
