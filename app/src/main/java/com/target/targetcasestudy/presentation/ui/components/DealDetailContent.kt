@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -77,8 +76,9 @@ fun DealDetailContent(deal: Deal) {
                         color = Color(getColor(LocalContext.current, R.color.darker_gray_color)),
                         fontWeight = FontWeight.W400,
                         modifier = Modifier
-                            .padding(start = 8.dp)
+                            .padding(start = 8.dp, bottom = 2.dp)
                             .align(Alignment.Bottom)
+
                     )
                 }
                 Text(
@@ -102,7 +102,6 @@ fun DealDetailContent(deal: Deal) {
         ) {
 
             Column() {
-
                 Text(
                     text = stringResource(R.string.product_details_heading),
                     fontSize = 18.sp,
@@ -113,12 +112,10 @@ fun DealDetailContent(deal: Deal) {
                     text = deal.description,
                     lineHeight = 20.sp,
                     color = Color(getColor(LocalContext.current, R.color.gray_color)),
-                    modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
+                    modifier = Modifier.padding(top = 16.dp, bottom = 90.dp)
                 )
-
             }
         }
-        //HorizontalDivider()
     }
 
 }

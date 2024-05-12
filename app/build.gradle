@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdk 34
@@ -56,6 +57,9 @@ dependencies {
   implementation(libs.androidx.activity.compose)
   implementation libs.composeRuntime
   implementation libs.compose
+  implementation libs.androidx.navigation.compose
+  implementation libs.androidx.hilt.navigation.compose
+  implementation libs.hilt.android.v242
 
   //Android Studio Preview Support
   implementation(libs.androidx.ui.tooling.preview)
@@ -89,4 +93,8 @@ dependencies {
   androidTestImplementation libs.androidXTestExtJunit
   androidTestImplementation libs.espressoCore
   //androidTestImplementation(libs.ui.test.junit4)
+
+
+  //kapt libs.hilt.android.compiler
+
 }

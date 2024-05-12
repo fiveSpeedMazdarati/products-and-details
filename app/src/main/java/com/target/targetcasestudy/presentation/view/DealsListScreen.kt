@@ -18,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.target.targetcasestudy.R
 import com.target.targetcasestudy.presentation.Screen
@@ -25,7 +26,7 @@ import com.target.targetcasestudy.presentation.ui.components.DealListItem
 import com.target.targetcasestudy.presentation.viewmodel.DealsListViewModel
 
 @Composable
-fun DealsListScreen(navController: NavController, viewModel: DealsListViewModel) {
+fun DealsListScreen(viewModel: DealsListViewModel = hiltViewModel(), navController: NavController) {
 
     val state = viewModel.state.value
     Log.i("RETRIEVED DEALS", state.deals.toString())
@@ -39,6 +40,21 @@ fun DealsListScreen(navController: NavController, viewModel: DealsListViewModel)
 
         Box(modifier = Modifier.fillMaxSize()) {
 
+            if (state.deals.isNotEmpty()) {
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    items(state.deals) { dealItem ->
+                        DealListItem(deal = dealItem,
+                            onItemClick = {
+
+                                navController.navigate(Screen.DealDetailScreen.route + "/${dealItem.id}")
+                            })
+
+                        }
+                    }
+                }
+
             if (state.error.isNotBlank()) {
                 Toast.makeText(LocalContext.current, state.error, Toast.LENGTH_LONG).show()
             }
@@ -47,22 +63,9 @@ fun DealsListScreen(navController: NavController, viewModel: DealsListViewModel)
             }
 
             if (state.deals.isEmpty()) {
-                Toast.makeText(LocalContext.current, "", Toast.LENGTH_LONG).show()
+                Text("No deals found",
+                    modifier = Modifier.align(Alignment.Center) )
             }
-
-            if (state.deals.isNotEmpty()) {
-                LazyColumn(
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    items(state.deals) { dealItem ->
-                        DealListItem(deal = dealItem,
-                            onItemClick = {
-                                navController.navigate(Screen.DealDetailScreen.route + "/${dealItem.id}")
-                            })
-
-                        }
-                    }
-                }
             }
         }
     }

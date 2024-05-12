@@ -12,9 +12,14 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
+import androidx.navigation.NavHost
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import com.target.targetcasestudy.presentation.ui.components.DealListItem
 import com.target.targetcasestudy.presentation.view.DealsListScreen
 import com.target.targetcasestudy.presentation.viewmodel.DealsListViewModel
+import androidx.navigation.compose.rememberNavController
+import com.target.targetcasestudy.presentation.view.DealDetailScreen
 
 @AndroidEntryPoint
 class MainActivity() : ComponentActivity() {
@@ -26,14 +31,25 @@ class MainActivity() : ComponentActivity() {
                 Surface (
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    DealsListScreen(viewModel = viewModel,
-                        navController = NavController(
-                            context = LocalContext.current
-                        )
-                    )
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = Screen.DealListScreen.route) {
+                        composable(
+                            route = Screen.DealListScreen.route
+                        ) {
+                            DealsListScreen(navController = navController)
+                        }
+                        composable(
+                            route = Screen.DealDetailScreen.route + "/{deal_id}"
+                        ) {
+                            DealDetailScreen(navController = navController)
+                        }
+                    }
+
+                }
+                
                 }
             }
         }
 
     }
-}
+

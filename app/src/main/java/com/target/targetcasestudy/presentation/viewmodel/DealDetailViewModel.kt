@@ -29,7 +29,7 @@ class DealDetailViewModel @Inject constructor(
         }
     }
 
-    private fun getDealDetails(dealId: String) {
+    fun getDealDetails(dealId: String) {
         getDealDetailUseCase(dealId).onEach {
             when (it) {
                 is Resource.Loading -> _state.value =
