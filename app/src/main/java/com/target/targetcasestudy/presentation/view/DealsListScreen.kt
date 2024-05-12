@@ -14,10 +14,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.target.targetcasestudy.R
 import com.target.targetcasestudy.presentation.Screen
 import com.target.targetcasestudy.presentation.ui.components.DealListItem
 import com.target.targetcasestudy.presentation.viewmodel.DealsListViewModel
@@ -30,7 +32,7 @@ fun DealsListScreen(navController: NavController, viewModel: DealsListViewModel)
 
     Column {
 
-        Text(text = "List",
+        Text(text = stringResource(R.string.list_header),
             modifier = Modifier.padding(12.dp),
             fontSize = 18.sp,
             fontWeight = FontWeight.W700)
