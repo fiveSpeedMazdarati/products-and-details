@@ -1,5 +1,6 @@
 package com.target.targetcasestudy.presentation.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,6 +12,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,11 +31,12 @@ fun DealListItem(
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .background(Color.White)
             .clickable {
                 onItemClick(deal)
             }
             .padding(20.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
+        //horizontalArrangement = Arrangement.SpaceBetween
     ) {
         GlideImage(model = deal.imageUrl,
             contentDescription = deal.title,

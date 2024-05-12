@@ -10,12 +10,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -41,7 +41,9 @@ fun DealDetailContent(deal: Deal) {
             modifier = Modifier
                 .background(color = Color.White)
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp),
+                .shadow(1.dp)
+                .padding(horizontal = 16.dp)
+
         ) {
             Column(modifier = Modifier.align(Alignment.TopCenter)) {
                 GlideImage(
@@ -88,15 +90,15 @@ fun DealDetailContent(deal: Deal) {
             }
         }
 
-        HorizontalDivider()
-        Spacer(modifier = Modifier.height(24.dp))
-        HorizontalDivider()
+        Spacer(modifier = Modifier.height(16.dp))
 
         Box(
             modifier = Modifier
                 .background(color = Color.White)
                 .fillMaxWidth()
+                .shadow(1.dp)
                 .padding(horizontal = 16.dp)
+
         ) {
 
             Column() {
@@ -116,7 +118,7 @@ fun DealDetailContent(deal: Deal) {
 
             }
         }
-        HorizontalDivider()
+        //HorizontalDivider()
     }
 
 }

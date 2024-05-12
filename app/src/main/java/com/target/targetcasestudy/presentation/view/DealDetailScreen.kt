@@ -27,7 +27,7 @@ fun DealDetailScreen (deal: Deal) {
     Scaffold(topBar = {
         HeaderNav(
             showBackArrow = true,
-            title = "Detail",
+            title = stringResource(id = R.string.details_header_title),
             onClick = {})
             },
         bottomBar = {
