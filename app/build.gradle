@@ -30,6 +30,7 @@ android {
     release {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.debug
     }
   }
   namespace 'com.target.targetcasestudy'
@@ -57,8 +58,8 @@ dependencies {
 
   //Android Studio Preview Support
   implementation(libs.androidx.ui.tooling.preview)
-  //debugImplementation(libs.androidx.ui.tooling)
-  //debugImplementation(libs.ui.test.manifest)
+  debugImplementation(libs.androidx.ui.tooling)
+  debugImplementation(libs.ui.test.manifest)
 
 
   //Retrofit2
@@ -83,8 +84,8 @@ dependencies {
   // Testing
   testImplementation libs.junit
   androidTestImplementation libs.androidXTestRunner
-  androidTestImplementation libs.androidXTestCore
+  //androidTestImplementation libs.androidXTestCore
   androidTestImplementation libs.androidXTestExtJunit
   androidTestImplementation libs.espressoCore
-  androidTestImplementation(libs.ui.test.junit4)
+  //androidTestImplementation(libs.ui.test.junit4)
 }

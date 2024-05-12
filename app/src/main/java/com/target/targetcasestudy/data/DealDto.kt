@@ -16,7 +16,7 @@ data class DealDto(
     val imageUrl: String,
     @SerializedName("regular_price")
     val regularPrice: PriceDto,
-    val salePrice: PriceDto,
+    val salePrice: PriceDto?,
     val title: String
 )
 
@@ -36,7 +36,7 @@ fun DealDto.toProduct() : Deal {
         id = id,
         imageUrl = imageUrl,
         regularPrice = regularPrice.toPrice(),
-        salePrice = salePrice.toPrice(),
+        salePrice = salePrice?.let { it.toPrice() },
         title = title
     )
 }

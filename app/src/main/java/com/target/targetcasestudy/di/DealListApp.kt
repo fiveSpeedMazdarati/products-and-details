@@ -1,4 +1,4 @@
-package com.target.targetcasestudy.presentation
+package com.target.targetcasestudy.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

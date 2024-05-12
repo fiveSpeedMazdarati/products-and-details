@@ -16,8 +16,13 @@ class GetDealsUseCase @Inject constructor(
         emit(Resource.Loading())
 
         val deals = repository.retrieveDeals()
+
         deals.data?.let {
             emit(Resource.Success(deals.data))
+        }
+
+        if (deals is Resource.Error) {
+            emit(Resource.Error(deals.message ?: "", null))
         }
     }
 

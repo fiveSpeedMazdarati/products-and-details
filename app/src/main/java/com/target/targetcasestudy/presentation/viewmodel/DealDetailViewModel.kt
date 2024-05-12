@@ -8,8 +8,10 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.target.targetcasestudy.common.Constants
 import com.target.targetcasestudy.common.Resource
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 @HiltViewModel
@@ -31,9 +33,9 @@ class DealDetailViewModel @Inject constructor(
         getDealDetailUseCase(dealId).onEach {
             when (it) {
                 is Resource.Loading -> _state.value = DealDetailState(null, true, "")
-                is Resource.Success -> _state.value = DealDetailState(deal = it.data)
+                is Resource.Success -> _state.value = DealDetailState(deal = it.data, isLoading = false, errorMessage = "")
                 is Resource.Error -> _state.value = DealDetailState(deal = null, isLoading = false, it.message ?: "Could not get deal details")
             }
-        }
+        }.launchIn(viewModelScope)
     }
 }
