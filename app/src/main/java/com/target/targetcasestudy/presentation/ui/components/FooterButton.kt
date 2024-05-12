@@ -30,8 +30,10 @@ fun FooterButton(text: String, onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .clip(RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp))
+            .background(Color.White)
             .height(75.dp)
-            .clip(RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp))
+
     ) {
 
         TextButton(onClick = onClick, modifier = Modifier
