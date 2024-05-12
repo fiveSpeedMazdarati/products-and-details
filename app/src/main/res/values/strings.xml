@@ -2,5 +2,6 @@
   <string name="app_name">Target Case Study</string>
   <string name="back_arrow">Back Arrow</string>
   <string name="list_header">List</string>
+  <string name="product_details_heading">Product details</string>
 
 </resources>

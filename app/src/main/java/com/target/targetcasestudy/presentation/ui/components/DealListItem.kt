@@ -69,7 +69,8 @@ fun Preview() {
         salePrice = Price(amountInCents = 17699, currencySymbol = "$", displayString = "$12.99"),
         fulfillment = "Online",
         imageUrl = "https://appstorage.target.com/app-data/native-tha-images/3.jpg",
-        availability = "In stock"),
+        availability = "In stock",
+        description = "This is a very large thing, in the color green. Other colors available."),
         onItemClick = { // do nothing for now
         }
     )

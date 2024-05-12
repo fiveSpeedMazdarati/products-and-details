@@ -17,5 +17,5 @@ data class DealsDto(
 *   to "products" which is the information that is actually returned and used in the app.
  */
 fun DealsDto.toProducts() : Deals {
-    return Deals(products = products.map { it.toProduct() })
+    return Deals(products = products.map { it.toDeal() })
 }

@@ -6,7 +6,7 @@ import androidx.annotation.RequiresExtension
 import com.target.targetcasestudy.api.DealService
 import com.target.targetcasestudy.common.Resource
 import com.target.targetcasestudy.data.toProducts
-import com.target.targetcasestudy.data.toProduct
+import com.target.targetcasestudy.data.toDeal
 import com.target.targetcasestudy.domain.model.Deal
 import com.target.targetcasestudy.domain.model.Deals
 import com.target.targetcasestudy.domain.repository.DealRepository
@@ -30,7 +30,7 @@ class DealRepositoryImpl @Inject constructor(private val service: DealService) :
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override suspend fun retrieveDeal(dealId: String): Resource<Deal> {
         return try {
-            val deal = service.retrieveDeal(dealId).toProduct()
+            val deal = service.retrieveDeal(dealId).toDeal()
             return Resource.Success(deal)
         } catch (e: HttpException) {
             Resource.Error(e.localizedMessage ?: "There was a problem retrieving this deal")
