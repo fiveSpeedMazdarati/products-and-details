@@ -2,6 +2,7 @@ package com.target.targetcasestudy.presentation.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -35,8 +36,10 @@ fun HeaderNav(showBackArrow: Boolean, title: String, onClick: () -> Unit ) {
                 modifier = Modifier
                     .size(32.dp)
                     .padding(6.dp)
-                    .align(Alignment.CenterVertically),
-                contentDescription = stringResource(R.string.back_arrow)
+                    .align(Alignment.CenterVertically)
+                    .clickable { onClick() },
+                contentDescription = stringResource(R.string.back_arrow),
+
             )
     }
         Text(
@@ -55,7 +58,7 @@ fun HeaderNav(showBackArrow: Boolean, title: String, onClick: () -> Unit ) {
 @Preview
 @Composable
 fun HeaderNavPreview() {
-    HeaderNav(showBackArrow = true, title = "Details") {
+    HeaderNav(showBackArrow = true, title = stringResource(R.string.details_header_title)) {
         // navigate to somewhere
     }
 }

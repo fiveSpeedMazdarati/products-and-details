@@ -4,5 +4,6 @@
   <string name="list_header">List</string>
   <string name="product_details_heading">Product details</string>
   <string name="add_to_cart_button_call_to_action">Add to cart</string>
+  <string name="details_header_title">Details</string>
 
 </resources>
