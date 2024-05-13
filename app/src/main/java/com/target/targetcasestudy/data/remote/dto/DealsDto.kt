@@ -1,4 +1,4 @@
-package com.target.targetcasestudy.data
+package com.target.targetcasestudy.data.remote.dto
 
 import com.target.targetcasestudy.domain.model.Deals
 

@@ -8,18 +8,14 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.target.targetcasestudy.presentation.ui.components.DealListItem
-import com.target.targetcasestudy.presentation.view.DealsListScreen
-import com.target.targetcasestudy.presentation.viewmodel.DealsListViewModel
+import com.target.targetcasestudy.presentation.deal_list.DealsListScreen
+import com.target.targetcasestudy.presentation.deal_list.DealsListViewModel
 import androidx.navigation.compose.rememberNavController
-import com.target.targetcasestudy.presentation.view.DealDetailScreen
+import com.target.targetcasestudy.common.Screen
+import com.target.targetcasestudy.presentation.deal_details.DealDetailScreen
 
 @AndroidEntryPoint
 class MainActivity() : ComponentActivity() {

@@ -1,10 +1,8 @@
-package com.target.targetcasestudy.api
+package com.target.targetcasestudy.data.remote
 
 import com.target.targetcasestudy.common.Constants
-import com.target.targetcasestudy.common.Resource
-import com.target.targetcasestudy.data.DealDto
-import com.target.targetcasestudy.data.DealsDto
-import retrofit2.Response
+import com.target.targetcasestudy.data.remote.dto.DealDto
+import com.target.targetcasestudy.data.remote.dto.DealsDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 

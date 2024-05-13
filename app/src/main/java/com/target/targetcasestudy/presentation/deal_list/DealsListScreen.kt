@@ -1,4 +1,4 @@
-package com.target.targetcasestudy.presentation.view
+package com.target.targetcasestudy.presentation.deal_list
 
 import android.util.Log
 import android.widget.Toast
@@ -21,9 +21,8 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.target.targetcasestudy.R
-import com.target.targetcasestudy.presentation.Screen
-import com.target.targetcasestudy.presentation.ui.components.DealListItem
-import com.target.targetcasestudy.presentation.viewmodel.DealsListViewModel
+import com.target.targetcasestudy.common.Screen
+import com.target.targetcasestudy.presentation.deal_list.components.DealListItem
 
 @Composable
 fun DealsListScreen(viewModel: DealsListViewModel = hiltViewModel(), navController: NavController) {
@@ -37,6 +36,10 @@ fun DealsListScreen(viewModel: DealsListViewModel = hiltViewModel(), navControll
             modifier = Modifier.padding(12.dp),
             fontSize = 18.sp,
             fontWeight = FontWeight.W700)
+
+        if (state.isLoading) {
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+        }
 
         Box(modifier = Modifier.fillMaxSize()) {
 
@@ -55,18 +58,11 @@ fun DealsListScreen(viewModel: DealsListViewModel = hiltViewModel(), navControll
                     }
                 }
 
-            if (state.error.isNotBlank()) {
-                Toast.makeText(LocalContext.current, state.error, Toast.LENGTH_LONG).show()
-            }
-            if (state.isLoading) {
-                CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-            }
+        }
 
-            if (state.deals.isEmpty()) {
-                Text("No deals found",
-                    modifier = Modifier.align(Alignment.Center) )
-            }
-            }
+        if (state.error.isNotBlank()) {
+            Toast.makeText(LocalContext.current, state.error, Toast.LENGTH_LONG).show()
+        }
         }
     }
 

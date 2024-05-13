@@ -1,8 +1,7 @@
-package com.target.targetcasestudy.presentation.viewmodel
+package com.target.targetcasestudy.presentation.deal_details
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import com.target.targetcasestudy.presentation.view.DealDetailState
 import com.target.targetcasestudy.domain.use_case.GetDealUseCase
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

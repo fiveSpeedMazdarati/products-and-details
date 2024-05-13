@@ -1,4 +1,4 @@
-package com.target.targetcasestudy.presentation.view
+package com.target.targetcasestudy.presentation.deal_list
 
 import com.target.targetcasestudy.domain.model.Deal
 import com.target.targetcasestudy.domain.model.Deals

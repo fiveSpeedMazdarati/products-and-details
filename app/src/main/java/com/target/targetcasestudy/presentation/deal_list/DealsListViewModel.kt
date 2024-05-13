@@ -1,14 +1,11 @@
-package com.target.targetcasestudy.presentation.viewmodel
+package com.target.targetcasestudy.presentation.deal_list
 
-import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.target.targetcasestudy.common.Resource
 import com.target.targetcasestudy.domain.use_case.GetDealsUseCase
-import com.target.targetcasestudy.presentation.view.DealDetailState
-import com.target.targetcasestudy.presentation.view.DealListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

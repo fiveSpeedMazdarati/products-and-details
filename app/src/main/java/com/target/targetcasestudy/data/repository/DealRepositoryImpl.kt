@@ -3,10 +3,10 @@ package com.target.targetcasestudy.data.repository
 import android.net.http.HttpException
 import android.os.Build
 import androidx.annotation.RequiresExtension
-import com.target.targetcasestudy.api.DealService
 import com.target.targetcasestudy.common.Resource
-import com.target.targetcasestudy.data.toProducts
-import com.target.targetcasestudy.data.toDeal
+import com.target.targetcasestudy.data.remote.DealService
+import com.target.targetcasestudy.data.remote.dto.toProducts
+import com.target.targetcasestudy.data.remote.dto.toDeal
 import com.target.targetcasestudy.domain.model.Deal
 import com.target.targetcasestudy.domain.model.Deals
 import com.target.targetcasestudy.domain.repository.DealRepository

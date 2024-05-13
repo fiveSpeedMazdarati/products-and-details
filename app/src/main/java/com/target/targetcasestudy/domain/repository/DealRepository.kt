@@ -1,8 +1,6 @@
 package com.target.targetcasestudy.domain.repository
 
 import com.target.targetcasestudy.common.Resource
-import com.target.targetcasestudy.data.DealDto
-import com.target.targetcasestudy.data.DealsDto
 import com.target.targetcasestudy.domain.model.Deal
 import com.target.targetcasestudy.domain.model.Deals
 

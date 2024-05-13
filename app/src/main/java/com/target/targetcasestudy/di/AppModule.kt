@@ -1,6 +1,6 @@
 package com.target.targetcasestudy.di
 
-import com.target.targetcasestudy.api.DealService
+import com.target.targetcasestudy.data.remote.DealService
 import com.target.targetcasestudy.common.Constants
 import com.target.targetcasestudy.data.repository.DealRepositoryImpl
 import com.target.targetcasestudy.domain.repository.DealRepository

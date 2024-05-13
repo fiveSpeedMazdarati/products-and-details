@@ -1,4 +1,4 @@
-package com.target.targetcasestudy.presentation.ui.components
+package com.target.targetcasestudy.presentation.deal_list.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,12 +26,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.createSavedStateHandle
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.target.targetcasestudy.R
-import com.target.targetcasestudy.common.Constants
 import com.target.targetcasestudy.domain.model.Deal
 import com.target.targetcasestudy.domain.model.Price
 

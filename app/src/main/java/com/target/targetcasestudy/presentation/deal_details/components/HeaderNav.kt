@@ -1,4 +1,4 @@
-package com.target.targetcasestudy.presentation.ui.components
+package com.target.targetcasestudy.presentation.deal_details.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
