@@ -19,16 +19,19 @@ import com.target.targetcasestudy.presentation.deal_details.DealDetailScreen
 
 @AndroidEntryPoint
 class MainActivity() : ComponentActivity() {
-    private val viewModel: DealsListViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                Surface (
+                Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = Screen.DealListScreen.route) {
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.DealListScreen.route
+                    ) {
                         composable(
                             route = Screen.DealListScreen.route
                         ) {
@@ -42,10 +45,10 @@ class MainActivity() : ComponentActivity() {
                     }
 
                 }
-                
-                }
+
             }
         }
-
     }
+
+}
 
